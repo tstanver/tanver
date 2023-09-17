@@ -1,0 +1,121 @@
+:root{
+  --primary-color: red;
+
+  --light: white;
+  --dark: black;
+  --gray: gray;
+
+  --white: white;
+  --black: black;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow-x: hidden;
+  background: var(--dark);
+  color: var(--light);
+}
+h1{
+  text-align: center;
+  font-size: 2.4rem;
+}
+p{
+  color: var(--gray);
+}
+section.hero{
+  height: 100dvh;
+  width: 100dvw;
+  overflow: hidden;
+  max-width: 1920px;
+  margin-inline: auto;
+}
+section.hero
+.background{
+  background-repeat: no-repeat;
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color),
+    var(--white),
+    var(--primary-color)
+  );
+  overflow: hidden;
+}
+section.hero
+img{
+  width: 100dvw;
+
+  filter: brightness(1) saturate(1.6) contrast(.9);
+  mix-blend-mode: multiply;
+}
+img{
+  width: 100%;
+
+  object-fit: scale-down;
+  object-position: center;
+
+  filter: brightness(1.2) saturate(1.2) contrast(1.2);
+}
+section.hero .background,
+section.hero .foreground{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1em;
+}
+.flex-col{
+  flex-direction: column;
+}
+section.hero
+h1{
+  font-size: 21vw;
+  background: linear-gradient(180deg, transparent, var(--primary-color));
+  font-weight: bolder;
+  -webkit-text-stroke: 2px var(--light);
+  
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+section.about{
+  min-height: 100dvh;
+  padding-inline: 2rem;
+  padding-block: 4rem;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+section.about img{
+  border-radius: 1rem;
+}
+.grid{
+  display: grid;
+  place-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.md-grid{
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+footer{
+  background: var(--black);
+  color: var(--white);
+  max-width: 1920px;
+  margin-inline: auto;
+  padding-block: 1rem;
+  text-align: center;
+  border-top: 1px solid var(--white);
+}
