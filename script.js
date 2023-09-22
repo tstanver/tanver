@@ -61,7 +61,7 @@ setInterval(() => {
   
   metaThemeColor.content = oldPrimaryColor;
   root.style = '--primary-color:' + oldPrimaryColor + ';';
-}, 300)
+}, 1)
 
 
 
