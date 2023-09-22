@@ -1,10 +1,11 @@
 
+
 const root = document.documentElement;
 const head = document.head;
-const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+let metaThemeColor = document.querySelector('meta[name="theme-color"]');
 const body = document.body;
 
-// ----------- scroll animation 
+// ----------- animation by scroll
 
 const scrollers = document.querySelectorAll('.scroller');
 window.addEventListener('scroll', checkScrollers)
@@ -27,7 +28,8 @@ function checkScrollers() {
     })
 }
 
-// theme changing ***************
+
+// theme changing
 
 let theme = document.getElementById('theme');
 
@@ -44,18 +46,21 @@ setInterval(() =>{
 },1)
 
 
-// new script
+// primary color
 
 let inputPrimaryColor = document.getElementById("input-primary-color");
 
 setInterval(() => {
   let primaryColor = inputPrimaryColor.value;
-  inputPrimaryColor.addEventListener('change', () =>{
-    localStorage.setItem("primaryColor", primaryColor);
-  })
+
+  inputPrimaryColor.onchange = () =>{
+   localStorage.setItem("primaryColor", primaryColor);
+  };
+
+  let oldPrimaryColor = localStorage.getItem("primaryColor");
   
-  metaThemeColor.conent = primaryColor;
-  root.style = '--primary-color:' + primaryColor + ';';
+  metaThemeColor.content = oldPrimaryColor;
+  root.style = '--primary-color:' + oldPrimaryColor + ';';
 }, 300)
 
 
